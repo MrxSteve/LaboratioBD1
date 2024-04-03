@@ -346,4 +346,16 @@ insert into distrito values
 	('USO03', 'San Agustín', 'USO'),
 	('USO04', 'San Francisco Javier', 'USO');
     
+    insert into direcciones (linea1, linea2, idDistrito, codigoPostal) values
+	('Col Madera, Calle 1, #1N', 'Frente al parque', 'SON02', '02311'),  -- 1					
+	('Barrio El Caldero, Av 2, #2I', 'Frente al amate', 'SOE01', '02306'), -- 2
+	('Res El Cangrejo, Av 3, #3A', 'Frente a la playa', 'SOO01', '02302'), -- 3
+	('Barrio El Centro, Av 4, #4S', 'Frente a catedral', 'SOC01', '02301'), -- 4
+	('Col La Frontera, Calle 5, #5G', 'Km 10', 'AHS03', '02113'), -- 5
+	('Res Buenavista, Calle 6, #6A', 'Contiguo a Alcaldia', 'SAC01', '02201'), -- 6
+	('Res Altavista, Av 7, #7S', 'Contiguo al ISSS', 'SSC03', '01101'), -- 7
+	('Col Las Margaritas, Pje 20, #2-4', 'Junto a ANDA', 'AHS01', '02114'),-- 8
+	('Urb Las Magnolias, Pol 21, #2-6', 'Casa de esquina', 'LLO01', '01115'),-- 9
+	('Caserio Florencia, 3era Calle, #5', 'Casa rosada', 'SON01', '02305'); -- 10
+    
     
