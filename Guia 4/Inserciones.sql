@@ -359,4 +359,5 @@ insert into distrito values
 	('Caserio Florencia, 3era Calle, #5', 'Casa rosada', 'SON01', '02305'); -- 10
     
     select * from direcciones;
-    
+    select * from departamento;
+    select * from municipio;
