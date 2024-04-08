@@ -358,4 +358,5 @@ insert into distrito values
 	('Urb Las Magnolias, Pol 21, #2-6', 'Casa de esquina', 'LLO01', '01115'),-- 9
 	('Caserio Florencia, 3era Calle, #5', 'Casa rosada', 'SON01', '02305'); -- 10
     
+    select * from direcciones;
     
