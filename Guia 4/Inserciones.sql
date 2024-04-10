@@ -361,3 +361,101 @@ insert into distrito values
     select * from direcciones;
     select * from departamento;
     select * from municipio;
+    
+    
+    use supermarket;
+    -- inserccion de la tabla unidadMedida
+    insert into unidadMedida(unidadMedida)
+    values ('Gramos'), -- UM de peso
+    ('Kilogramos'),
+    ('Libras'),
+    ('Onzas'),
+    -- UM de Volumen
+    ('Mililitros'),
+    ('Litros'),
+    ('Galones'),
+    -- UM de paquete
+    ('Docena'),
+    ('Media Docena');
+
+    select * from unidadMedida;
+    
+    
+    -- inserccion de la tabla categoria
+    insert into categoria(categoria, descripcionCategoria)
+    values ('Perecederos', 'frutas, verduras, Produc_Lacteos, carne, pescados, panaderia,pasteleria'),
+    ('Envasados', 'enlatados, product_secos, cereales, galletas, snacks'),
+    ('Bebidas', 'aguas, refrescos, jugos, cervezas, vinos,licores, cafe, té'),
+    ('Limpieza','detergentes, suavizantes, escobas, trapos, esponjas'),
+    ('Higiene_Belleza','Champus, jabones, cremas, lociones, desodorantes, higiene_Dental, papel_higienico'),
+    ('Articulos_para_bebés','pañales, alimentos_bebes, juguetes, biberones,shampoo');
+    
+    select * from categoria;
+    
+    -- inserccion de la tabla marca
+    insert into marca(marca, descripcionMarca)
+    values ('Salud','Productos lacteos, jugos y derivados'),
+    ('Del Monte','Frutas enlatadas, vegetales y jugos'),
+    ('San Julian', 'Productos lacteos'),
+    ('Suavitel', 'Suavizante de telas'),
+    ('Protex', 'Producto de Higiene'),
+    ('Kelloggs', 'Fabricante de cereales y productos alimenticios'),
+    ('Dove', 'Marca de cuidado personal de piel y cabello');
+    
+    select * from marca;
+    
+    -- inserccion de la tabla cliente
+    insert into cliente(nombreCliente, apellidoCliente, DUICliente, correoCliente, fechaNacimientoCliente, telefonoCliente, idDireccion)
+    values ('Ismael Enrique','Garcia Hernandez', '06409440-1', 'ismaelhernan1237@gmail.com', '2002-09-25', '7052 6354', '1'),
+    ('Ronal Eduardo','Cortez Mendez','05680566-0','ronal18@gmail.com','1998-03-13','7245 1571','2'),
+    ('Geofrey Steve','Muñoz Tobar','06395224-0','mrSteve23@gmail.com','2002-09-14','6157 2882','5'),
+    ('Mauricio Baltazar','Lovato Orellana','06412192-3','baltaOrellana@gmail.com','2002-10-19','7566 7116','3'),
+    ('Cecilia Andrea','Aguilar Torres','06235223-0','andy2Ceci@gmail.com','2000-08-12','7575 1420','4');
+    
+    select * from cliente;
+    
+    
+    -- insercciones de la tabla bodega
+      insert into bodega(nombreBodega, descripcionBodega, capacidadBodega, tipoAlmacenamiento, fechaEntrada, fechaSalidad)
+    values ('Almacen Central','Bodega principal para productos perecederos','2000','Almacenamiento Frío','2024-04-09','2024-12-06'),
+    ('Centro de Envasados','Bodega para los productos enlatados y derivado','1500','Almacenamiento de temperatura controlada','2024-02-28','2025-08-12'),
+    ('Almacen de Suministro de Limpieza','Bodega para productos de higiene y limpieza en el hogar','20000','Almacenamiento de temperatura media','2024-11-10','2025-10-22');
+    
+select * from bodega;
+
+-- Inserccion de la tabla cargo
+insert into cargo(cargo, descripcionCargo)
+values ('SysAdmin', 'Administrador del sistema'),
+('Gerente', 'Supervisor del centro'),
+('Cajero','Atencion al cliente y manejo de efectivo'),
+('Bodeguero', 'Personal encargado del control y orden de los productos'),
+('Seguridad', 'Vigilancia del centro'),
+('Limpieza', 'Encargado de mantener en ordeanado y aceado el centro');
+
+select * from cargo;
+ 
+-- Insercciones de la tabla empleado
+
+insert into empleado(nombreEmpleado, apellidoEmpleado, DUIEmpleado, correoEmpleado, fechaNacimientoEmpleado, telefonoEmpleado, idCargo, idDireccion)
+values  ('Jorge Alberto','Cuadra Mendez','05665126-2','albbert@gmail.com','1998-10-01','2456 6366','1','3'),
+('Pedro Jose','Aquino Juares','06235698-0','aquino9@gmail.com','1980-05-23','7171 5621','5','2'),
+('Ricardo Antonio','Viscarra Hernandez','02369645-1','Rivis@gmail.com','2001-01-25','7698 2354','4','1'),
+('Marcella Rocio','Gonzalez Hernandez','06451289-0','marce2525@gmail.com','2000-04-28','7425 0012','2','1'),
+('Gerardo Alexander','Garcia Hernandez','0623633-4','gerarA@gmail.com','1998-09-15','7273 5614','3','5');
+
+select * from unidadmedida;
+
+-- insercciones de la tabla distribuidor
+insert into distribuidor(distribuidor, idDireccion, descripcionDistribuidor)
+values ('La Constancia', '6','Distribuidora de bebidas carbonatadas y alcoholicas'),
+('Salud', '3','Distribuidora de productos lacteos y derivados'),
+('Pollo Indio', '5', 'Distribuidora de carne de pollo y embutido '),
+('Sabritas', '2', 'Proveedora de snacks y golosinas');
+
+
+-- insercciones de la tabla producto
+insert into producto(producto, descripcionProducto, precioVenta, stock, fechaCaducidad, idCategoria, idMarca, idUnidadMedida, idDistribuidor)
+values ('Yougurt', 'Bebida a base de leche', '2.50', '10', '2024-06-23', '3', '1', '4', '2'),
+('Queso','Queso de loroco', '5.00','20','2024-05-09','1','1','3','2');
+
+select *from producto;
