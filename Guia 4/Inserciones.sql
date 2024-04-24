@@ -443,7 +443,7 @@ values  ('Jorge Alberto','Cuadra Mendez','05665126-2','albbert@gmail.com','1998-
 ('Marcella Rocio','Gonzalez Hernandez','06451289-0','marce2525@gmail.com','2000-04-28','7425 0012','2','1'),
 ('Gerardo Alexander','Garcia Hernandez','0623633-4','gerarA@gmail.com','1998-09-15','7273 5614','3','5');
 
-select * from unidadmedida;
+select * from empleado;
 
 -- insercciones de la tabla distribuidor
 insert into distribuidor(distribuidor, idDireccion, descripcionDistribuidor)
@@ -454,8 +454,9 @@ values ('La Constancia', '6','Distribuidora de bebidas carbonatadas y alcoholica
 
 
 -- insercciones de la tabla producto
-insert into producto(producto, descripcionProducto, precioVenta, stock, fechaCaducidad, idCategoria, idMarca, idUnidadMedida, idDistribuidor)
+insert into producto(producto, descripcionProducto, precioVenta, stock, fechaCaducidad, idCategoria, idMarca, idUnidadMedida, idDistribuidor, idBodega)
 values ('Yougurt', 'Bebida a base de leche', '2.50', '10', '2024-06-23', '3', '1', '4', '2'),
 ('Queso','Queso de loroco', '5.00','20','2024-05-09','1','1','3','2');
 
 select *from producto;
+
