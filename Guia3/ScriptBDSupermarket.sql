@@ -222,6 +222,12 @@ alter table usuarios add foreign key (idRol) references roles (idRol);
 alter table usuarios add foreign key (idEmpleado) references empleado(idEmpleado);
 
 
+    
+    
+    
+    
+
+
 
 
 
