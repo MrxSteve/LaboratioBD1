@@ -459,7 +459,7 @@ values ('La Constancia', '6','Distribuidora de bebidas carbonatadas y alcoholica
 select * from distribuidor;
 
 -- insercciones de la tabla producto
-<<<<<<< HEAD
+
 insert into producto(producto, descripcionProducto, precioVenta, stock, fechaCaducidad, idCategoria, idMarca, idUnidadMedida, idDistribuidor)
 values ('Yougurt', 'Bebida a base de leche', 2.50, 10, '2024-09-23', 3, 1, 4, 2),
 ('Queso','Queso de loroco', 5.00, 20, '2024-05-09', 1, 1, 3, 2),
@@ -524,17 +524,17 @@ values('FC1', 4, null, null, 4, 1),
 
 select * from detallePedido;
 
-
-
-
-
-
-
-=======
 insert into producto(producto, descripcionProducto, precioVenta, stock, fechaCaducidad, idCategoria, idMarca, idUnidadMedida, idDistribuidor, idBodega)
 values ('Yougurt', 'Bebida a base de leche', '2.50', '10', '2024-06-23', '3', '1', '4', '2'),
 ('Queso','Queso de loroco', '5.00','20','2024-05-09','1','1','3','2');
 
 select *from producto;
 
->>>>>>> fc7bf0ec567af7c8f83f03f0efed691ec52697d2
+use supermarket;
+
+insert into roles (rol) values
+ ('SysAdmin'),
+ ('Gerente'),
+ ('Cajero'),
+ ('RRHH'); 
+
