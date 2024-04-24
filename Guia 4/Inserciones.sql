@@ -459,10 +459,7 @@ values ('La Constancia', '6','Distribuidora de bebidas carbonatadas y alcoholica
 select * from distribuidor;
 
 -- insercciones de la tabla producto
-<<<<<<< HEAD
 
-=======
->>>>>>> 97bb5201c89870f8ccf71523f684cee10cb459e1
 insert into producto(producto, descripcionProducto, precioVenta, stock, fechaCaducidad, idCategoria, idMarca, idUnidadMedida, idDistribuidor)
 values ('Yougurt', 'Bebida a base de leche', 2.50, 10, '2024-09-23', 3, 1, 4, 2),
 ('Queso','Queso de loroco', 5.00, 20, '2024-05-09', 1, 1, 3, 2),
@@ -527,17 +524,12 @@ values('FC1', 4, null, null, 4, 1),
 
 select * from detallePedido;
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 97bb5201c89870f8ccf71523f684cee10cb459e1
 insert into producto(producto, descripcionProducto, precioVenta, stock, fechaCaducidad, idCategoria, idMarca, idUnidadMedida, idDistribuidor, idBodega)
 values ('Yougurt', 'Bebida a base de leche', '2.50', '10', '2024-06-23', '3', '1', '4', '2'),
 ('Queso','Queso de loroco', '5.00','20','2024-05-09','1','1','3','2');
 
 select *from producto;
 
-<<<<<<< HEAD
 use supermarket;
 
 insert into roles (rol) values
@@ -546,7 +538,6 @@ insert into roles (rol) values
  ('Cajero'),
  ('RRHH'); 
 
-=======
 -- nuevas inserciones
 
 insert into opciones (opcion) values
@@ -575,4 +566,3 @@ insert into opciones (opcion) values
     ('Gestionar usuarios'),
     ('Gestionar venta');
     
->>>>>>> 97bb5201c89870f8ccf71523f684cee10cb459e1
