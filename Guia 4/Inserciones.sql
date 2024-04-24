@@ -406,20 +406,24 @@ insert into distrito values
     
     -- inserccion de la tabla cliente
     insert into cliente(nombreCliente, apellidoCliente, DUICliente, correoCliente, fechaNacimientoCliente, telefonoCliente, idDireccion)
-    values ('Ismael Enrique','Garcia Hernandez', '06409440-1', 'ismaelhernan1237@gmail.com', '2002-09-25', '7052 6354', '1'),
-    ('Ronal Eduardo','Cortez Mendez','05680566-0','ronal18@gmail.com','1998-03-13','7245 1571','2'),
-    ('Geofrey Steve','Muñoz Tobar','06395224-0','mrSteve23@gmail.com','2002-09-14','6157 2882','5'),
-    ('Mauricio Baltazar','Lovato Orellana','06412192-3','baltaOrellana@gmail.com','2002-10-19','7566 7116','3'),
-    ('Cecilia Andrea','Aguilar Torres','06235223-0','andy2Ceci@gmail.com','2000-08-12','7575 1420','4');
+    values ('Ismael Enrique','Garcia Hernandez', '06409440-1', 'ismaelhernan1237@gmail.com', '2002-09-25', '7052-6354', '1'),
+    ('Ronal Eduardo','Cortez Mendez','05680566-0','ronal18@gmail.com','1998-03-13','7245-1571','2'),
+    ('Geofrey Steve','Muñoz Tobar','06395224-0','mrSteve23@gmail.com','2002-09-14','6157-2882','5'),
+    ('Mauricio Baltazar','Lovato Orellana','06412192-3','baltaOrellana@gmail.com','2002-10-19','7566-7116','3'),
+    ('Cecilia Andrea','Aguilar Torres','06235223-0','andy2Ceci@gmail.com','2000-08-12','7575-1420','4');
+    
+    -- modificar el tipo de dato en fecha y en telefono, error tecnico XD
+    alter table cliente modify column fechaNacimientoCliente date;
+    alter table cliente modify column telefonoCliente varchar(20);
     
     select * from cliente;
     
     
     -- insercciones de la tabla bodega
-      insert into bodega(nombreBodega, descripcionBodega, capacidadBodega, tipoAlmacenamiento, fechaEntrada, fechaSalidad)
-    values ('Almacen Central','Bodega principal para productos perecederos','2000','Almacenamiento Frío','2024-04-09','2024-12-06'),
-    ('Centro de Envasados','Bodega para los productos enlatados y derivado','1500','Almacenamiento de temperatura controlada','2024-02-28','2025-08-12'),
-    ('Almacen de Suministro de Limpieza','Bodega para productos de higiene y limpieza en el hogar','20000','Almacenamiento de temperatura media','2024-11-10','2025-10-22');
+insert into bodega(nombreBodega, descripcionBodega, capacidadBodega, tipoAlmacenamiento, fechaEntrada, fechaSalidad)
+values ('Almacen Central','Bodega principal para productos perecederos','2000','Almacenamiento Frío','2024-04-09','2024-12-06'),
+('Centro de Envasados','Bodega para los productos enlatados y derivado','1500','Almacenamiento de temperatura controlada','2024-02-28','2025-08-12'),
+('Almacen de Suministro de Limpieza','Bodega para productos de higiene y limpieza en el hogar','20000','Almacenamiento de temperatura media','2024-11-10','2025-10-22');
     
 select * from bodega;
 
@@ -452,10 +456,76 @@ values ('La Constancia', '6','Distribuidora de bebidas carbonatadas y alcoholica
 ('Pollo Indio', '5', 'Distribuidora de carne de pollo y embutido '),
 ('Sabritas', '2', 'Proveedora de snacks y golosinas');
 
+select * from distribuidor;
 
 -- insercciones de la tabla producto
 insert into producto(producto, descripcionProducto, precioVenta, stock, fechaCaducidad, idCategoria, idMarca, idUnidadMedida, idDistribuidor)
-values ('Yougurt', 'Bebida a base de leche', '2.50', '10', '2024-06-23', '3', '1', '4', '2'),
-('Queso','Queso de loroco', '5.00','20','2024-05-09','1','1','3','2');
+values ('Yougurt', 'Bebida a base de leche', 2.50, 10, '2024-09-23', 3, 1, 4, 2),
+('Queso','Queso de loroco', 5.00, 20, '2024-05-09', 1, 1, 3, 2),
+('Jamon', 'Jamon de pavo y cerdo en bandeja', 2.88, 8, '2024-08-12', 1, 3, 1, 3);
 
-select *from producto;
+-- inserciones de formas de pago
+insert into formapago(formaPago)
+values ('Efectivo'),
+('Tarjeta de credito'),
+('Tarjeta de debito'),
+('Paypal'),
+('Transferencia bancaria');
+
+-- se me olvido agregarle descripcion pero no es un campo obligatorio XD
+
+-- inserciones de venta 
+
+insert into venta(fechaVenta, totalVenta, idEmpleado, idCliente) 
+values('2024-04-20', 30.22, 6, 1),
+('2024-04-23', 22.80, 6, 2),
+('2024-04-22', 10.89, 7, 4);
+
+select * from producto;
+
+
+-- inserciones de detalle venta
+insert into detalleVenta(idProducto, idVenta, cantidadProductosVenta)
+values (1, 4, 7),
+(2, 5, 9),
+(1, 6, 2);
+
+select * from detalleVenta;
+
+-- insersiones factura venta
+insert into facturaVenta(numeroFacturaVenta, montoFacturaVenta, ivaFacturaVenta, creditoFiscalFacturaVenta, idDetalleVenta, idFormaPago)
+values ('F1', 4, null, null, 1, 1),
+('F2', 5, null, null, 2, 2),
+('F3', 4, null, null, 3, 1);
+
+-- inserciones pedido
+
+insert into pedido(nombrePedido, montoPedido, unidadesPedido, fechaPedido, idEmpleado, idDistribuidor)
+values ('Pedido1', 5, 2, '2024-03-12', 6, 3),
+('Pedido2', 6, 7, '2024-03-12', 6, 3),
+('Pedido3', 12, 9, '2024-03-12', 9, 2);
+
+select * from pedido;
+
+-- inserciones detalle pedido
+
+insert into detallePedido (idPedido, idProducto, cantidadProductosPedido)
+values (7, 3, 4),
+(8, 2, 5),
+(9, 3, 6);
+
+-- inserciones factura compra
+insert into facturaCompra(numeroFacturaCompra, montoFacturaCompra, ivaFacturaCompra, creditofiscalFacturaCompra, idDetallePedido, idFormaPago)
+values('FC1', 4, null, null, 4, 1),
+('FC2', 6, null, null, 5, 1),
+('FC3', 12, null, null, 6, 2);
+
+
+select * from detallePedido;
+
+
+
+
+
+
+
