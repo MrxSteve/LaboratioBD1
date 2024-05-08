@@ -541,28 +541,63 @@ insert into roles (rol) values
 -- nuevas inserciones
 
 insert into opciones (opcion) values
-	('Gestionar asignacionrolesopcione'),
-	('Gestionar cliente'),
-    ('Gestionar categoria'),
-    ('Gestionar cargo'),
-    ('Gestionar bodega'),
-    ('Gestionar departamento'),
-    ('Gestionar detallepedido'),
-    ('Gestionar detalleventa'),
-    ('Gestionar direcciones'),
-    ('Gestionar distribuidor'),
-    ('Gestionar distrito'),
-    ('Gestionar empleado'),
-    ('Gestionar facturacompra'),
-    ('Gestionar facturaventa'),
-    ('Gestionar formapago'),
-    ('Gestionar marca'),
-    ('Gestionar municipio'),
-    ('Gestionar opciones'),
-    ('Gestionar pedido'),
-    ('Gestionar producto'),
-    ('Gestionar roles'),
-    ('Gestionar unidadmedida'),
-    ('Gestionar usuarios'),
-    ('Gestionar venta');
+	('Gestionar asignacionrolesopcione'), -- 1
+	('Gestionar cliente'),  -- 2
+    ('Gestionar categoria'), -- 3
+    ('Gestionar cargo'),  -- 4
+    ('Gestionar bodega'), -- 5
+    ('Gestionar departamento'), -- 6
+    ('Gestionar detallepedido'), -- 7
+    ('Gestionar detalleventa'), -- 8
+    ('Gestionar direcciones'), -- 9
+    ('Gestionar distribuidor'), -- 10
+    ('Gestionar distrito'),  -- 11
+    ('Gestionar empleado'), -- 12
+    ('Gestionar facturacompra'), -- 13
+    ('Gestionar facturaventa'), -- 14
+    ('Gestionar formapago'), -- 15
+    ('Gestionar marca'), -- 16
+    ('Gestionar municipio'), -- 17
+    ('Gestionar opciones'), -- 18
+    ('Gestionar pedido'), -- 19
+    ('Gestionar producto'), -- 20
+    ('Gestionar roles'),-- 21
+    ('Gestionar unidadmedida'), -- 22
+    ('Gestionar usuarios'), -- 23
+    ('Gestionar venta'), -- 24
+    ('Gestionar cuentas'); -- 25
     
+    select * from opciones;
+    insert into asignacionRolesOpciones(idRol, idOpcion)
+    values
+    -- SysAdmin
+    ('1', '1'),
+    ('1', '2'),
+    ('1', '3'),
+    ('1', '4'),
+    ('1', '5'),
+    ('1', '6'),
+    ('1', '7'),
+    ('1', '8'),
+    ('1', '9'),
+    ('1', '10'),
+    ('1', '11'),
+    ('1', '12'),
+    ('1', '13'),
+    ('1', '14'),
+    ('1', '15'),
+    ('1', '16'),
+    ('1', '17'),
+    ('1', '18'),
+    ('1', '19'),
+    ('1', '20'),
+    ('1', '21'),
+    ('1', '22'),
+    ('1', '23'),
+    ('1', '24'),
+    ('1', '25');
+    
+    
+    
+    
+   
