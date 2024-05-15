@@ -538,6 +538,7 @@ insert into roles (rol) values
  ('Cajero'), -- 3
  ('RRHH');  -- 4
 
+
 insert into roles (rol) values
   ('Bodeguero');
 
@@ -618,6 +619,52 @@ insert into opciones (opcion) values
     ('1', '24'),
     ('1', '25');
     
+      insert into asignacionRolesOpciones(idRol, idOpcion)
+    values 
+    -- Gerente
+    ('2', '1'),
+    ('2', '2'),
+    ('2', '3'),
+    ('2', '4'),
+    ('2', '5'),
+    ('2', '6'),
+    ('2', '7'),
+    ('2', '8'),
+    ('2', '9'),
+    ('2', '10'),
+    ('2', '11'),
+    ('2', '12'),
+    ('2', '13'),
+    ('2', '14'),
+    ('2', '15'),
+    ('2', '16'),
+    ('2', '17'),
+    ('2', '18'),
+    ('2', '19'),
+    ('2', '20'),
+    ('2', '21'),
+    ('2', '22'),
+    ('2', '23'),
+    ('2', '24'),
+    ('2', '25'),
+    -- Cajero
+    ('3','24'),
+    ('3','8'),
+    ('3','14'),
+    ('3','13'),
+    ('3','15'),
+    ('3','19'),
+    ('3','7'),
+    ('3','8'),
+    ('3','16'),
+    ('3','3'),
+    ('3','20'),
+    ('3','6'),
+    ('3','17'), 
+    ('3','11');
+    
+    
+
 insert into RRHH (Empleados,Cargo,Direcciones,Departamentos,Municipios,Distritos)
 values
     -- RRHH
@@ -638,4 +685,4 @@ insert into usuarios(usuario,contraseña,idRol,IdEmpleado) values
 select * from empleado;
 
 
-   
+
