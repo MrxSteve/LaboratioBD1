@@ -533,10 +533,10 @@ select *from producto;
 use supermarket;
 
 insert into roles (rol) values
- ('SysAdmin'),
- ('Gerente'),
- ('Cajero'),
- ('RRHH'); 
+ ('SysAdmin'), -- 1
+ ('Gerente'), -- 2
+ ('Cajero'), -- 3
+ ('RRHH');  -- 4
 
 -- nuevas inserciones
 
@@ -597,7 +597,27 @@ insert into opciones (opcion) values
     ('1', '24'),
     ('1', '25');
     
-    
+
+insert into RRHH (Empleados,Cargo,Direcciones,Departamentos,Municipios,Distritos)
+values
+    -- RRHH
+('4','9'), -- Direcciones
+('4','4'), -- Cargos
+('4','12'), -- Empleados
+('4','6'), -- Departamentos
+('4','17'), -- Municipios
+('4','11'); -- Distritos
+
+insert into usuarios(usuario,contraseña,idRol,IdEmpleado) values
+('Sysadmin_Steventobar','root','1','1'), -- SysAdmin
+('Ger_EduardoMendez','mendez98','2','2'), -- Gerente
+('ismaelgArcia','garcia1','3','3'), -- cajero
+('davidvazquez','davz1','4','4'), -- bodeguero
+('rrhh_deco','deco11','5','5'); -- RRHH
+
+select * from empleado;
+
+
     
     
    
