@@ -538,6 +538,10 @@ insert into roles (rol) values
  ('Cajero'), -- 3
  ('RRHH');  -- 4
 
+
+insert into roles (rol) values
+  ('Bodeguero');
+
 -- nuevas inserciones
 
 insert into opciones (opcion) values
@@ -568,6 +572,24 @@ insert into opciones (opcion) values
     ('Gestionar cuentas'); -- 25
     
     select * from opciones;
+    insert into asignacionRolesOpciones(idRol, idOpcion)
+    values
+    -- Bodeguero
+    ('5', '3'),
+    ('5', '5'),
+    ('5', '7'),
+    ('5', '10'),
+    ('5', '13'),
+    ('5', '15'),
+    ('5', '16'),
+    ('5', '19'),
+    ('5', '20'),
+    ('5', '22'),
+    ('5', '24');
+
+	select * from roles;
+    select * from opciones;
+    select * from asignacionRolesOpciones;
     insert into asignacionRolesOpciones(idRol, idOpcion)
     values
     -- SysAdmin
@@ -642,3 +664,25 @@ insert into opciones (opcion) values
     ('3','11');
     
     
+
+insert into RRHH (Empleados,Cargo,Direcciones,Departamentos,Municipios,Distritos)
+values
+    -- RRHH
+('4','9'), -- Direcciones
+('4','4'), -- Cargos
+('4','12'), -- Empleados
+('4','6'), -- Departamentos
+('4','17'), -- Municipios
+('4','11'); -- Distritos
+
+insert into usuarios(usuario,contraseña,idRol,IdEmpleado) values
+('Sysadmin_Steventobar','root','1','1'), -- SysAdmin
+('Ger_EduardoMendez','mendez98','2','2'), -- Gerente
+('ismaelgArcia','garcia1','3','3'), -- cajero
+('davidvazquez','davz1','4','4'), -- bodeguero
+('rrhh_deco','deco11','5','5'); -- RRHH
+
+select * from empleado;
+
+
+
