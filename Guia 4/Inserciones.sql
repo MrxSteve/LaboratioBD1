@@ -538,6 +538,9 @@ insert into roles (rol) values
  ('Cajero'),
  ('RRHH'); 
 
+insert into roles (rol) values
+  ('Bodeguero');
+
 -- nuevas inserciones
 
 insert into opciones (opcion) values
@@ -570,6 +573,24 @@ insert into opciones (opcion) values
     select * from opciones;
     insert into asignacionRolesOpciones(idRol, idOpcion)
     values
+    -- Bodeguero
+    ('5', '3'),
+    ('5', '5'),
+    ('5', '7'),
+    ('5', '10'),
+    ('5', '13'),
+    ('5', '15'),
+    ('5', '16'),
+    ('5', '19'),
+    ('5', '20'),
+    ('5', '22'),
+    ('5', '24');
+
+	select * from roles;
+    select * from opciones;
+    select * from asignacionRolesOpciones;
+    insert into asignacionRolesOpciones(idRol, idOpcion)
+    values
     -- SysAdmin
     ('1', '1'),
     ('1', '2'),
@@ -597,7 +618,6 @@ insert into opciones (opcion) values
     ('1', '24'),
     ('1', '25');
     
-    
-    
-    
+
+
    
