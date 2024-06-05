@@ -447,6 +447,15 @@ values  ('Jorge Alberto','Cuadra Mendez','05665126-2','albbert@gmail.com','1998-
 ('Marcella Rocio','Gonzalez Hernandez','06451289-0','marce2525@gmail.com','2000-04-28','7425 0012','2','1'),
 ('Gerardo Alexander','Garcia Hernandez','0623633-4','gerarA@gmail.com','1998-09-15','7273 5614','3','5');
 
+-- nuevos empleados
+
+insert into empleado(nombreEmpleado, apellidoEmpleado, DUIEmpleado, correoEmpleado, fechaNacimientoEmpleado, telefonoEmpleado, idCargo, idDireccion)
+values  ('Steve','Tobar','05665126-2','steventobar38@gmail.com','2002-09-14','2456 6366','1','3'),
+('Ismael','Garica','06235698-0','bigI@gmail.com','1980-05-23','7171 5621','5','2'),
+('Ronal','Mendez','02369645-1','rmendez@gmail.com','2001-01-25','7698 2354','4','1'),
+('David','Cruz','02369645-1','dcruz@gmail.com','2001-01-25','7698 2354','4','1'),
+('Recursos','Humanos','02369645-1','rrhh@gmail.com','2001-01-25','7698 2354','4','1');
+
 select * from empleado;
 
 -- insercciones de la tabla distribuidor
@@ -538,6 +547,7 @@ insert into roles (rol) values
  ('Cajero'), -- 3
  ('RRHH');  -- 4
 
+select * from roles;
 
 insert into roles (rol) values
   ('Bodeguero');
@@ -665,7 +675,7 @@ insert into opciones (opcion) values
     
     
 
-insert into RRHH (Empleados,Cargo,Direcciones,Departamentos,Municipios,Distritos)
+insert into asignacionRolesOpciones(idRol, idOpcion)
 values
     -- RRHH
 ('4','9'), -- Direcciones
@@ -675,14 +685,16 @@ values
 ('4','17'), -- Municipios
 ('4','11'); -- Distritos
 
-insert into usuarios(usuario,contraseña,idRol,IdEmpleado) values
-('Sysadmin_Steventobar','root','1','1'), -- SysAdmin
-('Ger_EduardoMendez','mendez98','2','2'), -- Gerente
-('ismaelgArcia','garcia1','3','3'), -- cajero
-('davidvazquez','davz1','4','4'), -- bodeguero
-('rrhh_deco','deco11','5','5'); -- RRHH
+
+insert into usuarios(usuario,contrasenia,idRol,IdEmpleado) values
+('Sysadmin_Steventobar','root','1','11'), -- SysAdmin
+('Ger_EduardoMendez','mendez98','2','12'), -- Gerente
+('ismaelgArcia','garcia1','3','13'), -- cajero
+('davidvazquez','davz1','4','14'), -- bodeguero
+('rrhh_deco','deco11','5','15'); -- RRHH
 
 select * from empleado;
+select * from usuarios;
 
 
 
