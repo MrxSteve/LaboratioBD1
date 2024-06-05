@@ -529,7 +529,6 @@ values ('Yougurt', 'Bebida a base de leche', '2.50', '10', '2024-06-23', '3', '1
 ('Queso','Queso de loroco', '5.00','20','2024-05-09','1','1','3','2');
 
 select *from producto;
-
 use supermarket;
 
 insert into roles (rol) values
@@ -617,7 +616,164 @@ insert into usuarios(usuario,contraseña,idRol,IdEmpleado) values
 
 select * from empleado;
 
+-- permisos para sysadmin
+-- grant all
+-- permisos para el Gerente
+-- permisos para el gerente
+grant select, insert, update, delete on supermarket.asignacionrolesopciones to Gerente;
+grant select, insert, update, delete on supermarket.bodega to Gerente;
+grant select, insert, update, delete on supermarket.cargo to Gerente;
+grant select, insert, update, delete on supermarket.categoria to Gerente;
+grant select, insert, update, delete on supermarket.cliente to Gerente;
+grant select, insert, update, delete on supermarket.cuentas to Gerente;
+grant select, insert, update, delete on supermarket.departamento to Gerente;
+grant select, insert, update, delete on supermarket.detallepedido to Gerente;
+grant select, insert, update, delete on supermarket.detalleventa to Gerente;
+grant select, insert, update, delete on supermarket.direcciones to Gerente;
+grant select, insert, update, delete on supermarket.distribuidor to Gerente;
+grant select, insert, update, delete on supermarket.distrito to Gerente;
+grant select, insert, update, delete on supermarket.empleado to Gerente;
+grant select, insert, update, delete on supermarket.facturacompra to Gerente;
+grant select, insert, update, delete on supermarket.facturaventa to Gerente;
+grant select, insert, update, delete on supermarket.formapago to Gerente;
+grant select, insert, update, delete on supermarket.marca to Gerente;
+grant select, insert, update, delete on supermarket.municipio to Gerente;
+grant select, insert, update, delete on supermarket.opciones to Gerente;
+grant select, insert, update, delete on supermarket.pedido to Gerente;
+grant select, insert, update, delete on supermarket.producto to Gerente;
+grant select, insert, update, delete on supermarket.roles to Gerente;
+grant select, insert, update, delete on supermarket.unidadmedida to Gerente;
+grant select, insert, update, delete on supermarket.usuarios to Gerente;
+grant select, insert, update, delete on supermarket.venta to Gerente;
 
+
+
+
+
+
+-- permisos para el cajero 
+grant select, insert, update, delete on supermarket.categoria to cajero;
+grant select, insert, update, delete on supermarket.departamento to cajero;
+grant select, insert, update, delete on supermarket.detalleventa to cajero;
+grant select, insert, update, delete on supermarket.detallepedido to cajero;
+grant select, insert, update, delete on supermarket.distrito to cajero;
+grant select, insert, update, delete on supermarket.facturacompra to cajero;
+grant select, insert, update, delete on supermarket.facturaventa to cajero;
+grant select, insert, update, delete on supermarket.formapago to cajero;
+grant select, insert, update, delete on supermarket.marca to cajero;
+grant select, insert, update, delete on supermarket.municipio to cajero;
+grant select, insert, update, delete on supermarket.pedido to cajero;
+grant select, insert, update, delete on supermarket.producto to cajero;
+grant select, insert, update, delete on supermarket.venta to cajero;
+
+
+--  permiso para RRHH
+grant select, insert, update, delete on supermarket.cargo to RRHH;
+grant select, insert, update, delete on supermarket.departamento to RRHH;
+grant select, insert, update, delete on supermarket.direcciones to RRHH;
+grant select, insert, update, delete on supermarket.distrito to RRHH;
+grant select, insert, update, delete on supermarket.empleado to RRHH;
+grant select, insert, update, delete on supermarket.municipio to RRHH;
+
+-- permisos para sysAdmin
+grant select, insert, update, delete on supermarket.asignacionrolesopciones to SysAdmin;
+grant select, insert, update, delete on supermarket.bodega to SysAdmin;
+grant select, insert, update, delete on supermarket.cargo to SysAdmin;
+grant select, insert, update, delete on supermarket.categoria to SysAdmin;
+grant select, insert, update, delete on supermarket.cliente to SysAdmin;
+grant select, insert, update, delete on supermarket.cuentas to SysAdmin;
+grant select, insert, update, delete on supermarket.departamento to SysAdmin;
+grant select, insert, update, delete on supermarket.detallepedido to SysAdmin;
+grant select, insert, update, delete on supermarket.detalleventa to SysAdmin;
+grant select, insert, update, delete on supermarket.direcciones to SysAdmin;
+grant select, insert, update, delete on supermarket.distribuidor to SysAdmin;
+grant select, insert, update, delete on supermarket.distrito to SysAdmin;
+grant select, insert, update, delete on supermarket.empleado to SysAdmin;
+grant select, insert, update, delete on supermarket.facturacompra to SysAdmin;
+grant select, insert, update, delete on supermarket.facturaventa to SysAdmin;
+grant select, insert, update, delete on supermarket.formapago to SysAdmin;
+grant select, insert, update, delete on supermarket.marca to SysAdmin;
+grant select, insert, update, delete on supermarket.municipio to SysAdmin;
+grant select, insert, update, delete on supermarket.opciones to SysAdmin;
+grant select, insert, update, delete on supermarket.pedido to SysAdmin;
+grant select, insert, update, delete on supermarket.producto to SysAdmin;
+grant select, insert, update, delete on supermarket.roles to SysAdmin;
+grant select, insert, update, delete on supermarket.unidadmedida to SysAdmin;
+grant select, insert, update, delete on supermarket.usuarios to SysAdmin;
+grant select, insert, update, delete on supermarket.venta to SysAdmin;
+
+
+
+
+-- insercciones de la tabla distribuidor
+insert into distribuidor(idDistribuidor, distribuidor, idDireccion, descripcionDistribuidor)
+values (1,'La Constancia', '6','Distribuidora de bebidas carbonatadas y alcoholicas'),
+(2,'Salud', '3','Distribuidora de productos lacteos y derivados'),
+(3,'Pollo Indio', '5', 'Distribuidora de carne de pollo y embutido '),
+(4,'Sabritas', '4', 'Proveedora de snacks y golosinas'),
+(5,'Galletas oreo', '4', 'Proveedora de snacks y golosinas'),
+(6,'Lido', '2', 'Proveedora pan de caja'),
+(7,'Vocka', '6', 'Proveedor de bebidas enbriagantes'),
+(8,'Scott', '2', 'Proveedor de papel higienicos'),
+(9,'Saba', '2', 'Proveedor de toallitas femininas'),
+(10,'Gillet', '2', 'Proveedor de prestobarbas para hpmbre y mujeres');
+select * from distribuidor;
+ 
+  -- inserccion de la tabla categoria
+    insert into categoria(categoria, descripcionCategoria)
+    values ('Perecederos', 'frutas, verduras, Produc_Lacteos, carne, pescados, panaderia,pasteleria'),
+    ('Envasados', 'enlatados, product_secos, cereales, galletas, snacks'),
+    ('Bebidas', 'aguas, refrescos, jugos, cervezas, vinos,licores, cafe, té'),
+    ('Limpieza','detergentes, suavizantes, escobas, trapos, esponjas'),
+    ('Higiene_Belleza','Champus, jabones, cremas, lociones, desodorantes, higiene_Dental, papel_higienico'),
+    ('Articulos_para_bebés','pañales, alimentos_bebes, juguetes, biberones,shampoo');
+    select * from categoria;
     
+    -- inserccion de la tabla marca
+    insert into marca( marca, descripcionMarca)
+    values ('Salud','Productos lacteos, jugos y derivados'),
+    ('Del Monte','Frutas enlatadas, vegetales y jugos'),
+    ('San Julian', 'Productos lacteos'),
+    ('Suavitel', 'Suavizante de telas'),
+    ('Protex', 'Producto de Higiene'),
+    ('Kelloggs', 'Fabricante de cereales y productos alimenticios'),
+    ('Dove', 'Marca de cuidado personal de piel y cabello'),
+    ('Coca Cola', 'Bebida carbonatada'),
+    ('Scott', 'Marca de higiene'),
+    ('del campo', 'Marca de mantequilla');
     
-   
+    select * from marca;
+    -- inserccion de la tabla unidadMedida
+    insert into unidadMedida(unidadMedida)
+    values ('Gramos'), -- UM de peso
+    ('Kilogramos'),
+    ('Libras'),
+    ('Onzas'),
+    -- UM de Volumen
+    ('Mililitros'),
+    ('Litros'),
+    ('Galones'),
+    -- UM de paquete
+    ('Docena'),
+    ('Media Docena');
+select * from unidadMedida;
+
+-- insercciones de la tabla bodega
+insert into bodega(nombreBodega, descripcionBodega, capacidadBodega, tipoAlmacenamiento, fechaEntrada, fechaSalidad)
+values ('Almacen Central','Bodega principal para productos perecederos','2000','Almacenamiento Frío','2024-04-09','2024-12-06'),
+('Centro de Envasados','Bodega para los productos enlatados y derivado','1500','Almacenamiento de temperatura controlada','2024-02-28','2025-08-12'),
+('Almacen de Suministro de Limpieza','Bodega para productos de higiene y limpieza en el hogar','20000','Almacenamiento de temperatura media','2024-11-10','2025-10-22');
+select * from bodega;
+
+INSERT INTO productos(producto, descripcionProducto, precioVenta, stock, fechaCaducidad, idCategoria, idMarca, idUnidadMedida, idDistribuidor, idBodega)
+VALUES ('Yougurt', 'Bebida a base de leche', 2.50, 10, '2024-06-23', 3, 1, 4, 2),
+       ('Queso', 'Queso de loroco', 5.00, 20, '2024-05-09', 1, 1, 3, 2);
+-- error
+
+select *from producto;
+
+INSERT INTO cliente (nombreCliente, apellidoCliente, DUICliente, correoCliente, fechaNacimientoCliente, telefonoCliente, idDireccion)
+VALUES ('Juan', 'Perez', '07123456-7', 'juan.perez@email.com', '1985-01-01', '4567 8901', 1);
+
+select * from cliente;
+

@@ -8,6 +8,8 @@ create table departamento (
     departamento varchar(25) not null,
     pais varchar(25)
 );
+select* from departamento;
+
 
 create table municipio (
 	idMunicipio char(3) primary key,
@@ -15,6 +17,8 @@ create table municipio (
     idDepartamento char(2) not null
 );
 alter table municipio add foreign key (idDepartamento) references departamento(idDepartamento);
+select * from municipio;
+
 
 create table distrito (
 	idDistrito char(5) primary key,
@@ -22,6 +26,8 @@ create table distrito (
     idMunicipio char(3) not null
 );
 alter table distrito add foreign key (idMunicipio) references municipio(idMunicipio);
+select * from distrito;
+
 
 create table direcciones (
 	idDireccion int primary key auto_increment,
@@ -31,12 +37,21 @@ create table direcciones (
     codigoPostal varchar(7)
 );
 alter table direcciones add foreign key (idDistrito) references distrito(idDistrito);
+select * from direcciones;
 
 create table cargo (
     idCargo  int primary key  auto_increment, 
     cargo    varchar(150),
     descripcionCargo longtext
 );
+-- inserciones para la tabla cargo
+insert into cargo(idCargo,cargo, descripcionCargo)
+values (1,'SysAdmin', 'Administrador del sistema'),
+(2,'Gerente', 'Supervisor del centro'),
+(3,'Cajero','Atencion al cliente y manejo de efectivo'),
+(4,'Bodeguero', 'Personal encargado del control y orden de los productos'),
+(5,'RRHH', 'interes en el personal de trabajo y actividades');
+select * from cargo;
 
 create table empleado(
    idEmpleado  int primary key auto_increment, 
@@ -52,6 +67,18 @@ create table empleado(
 alter table empleado add foreign key (idCargo) references cargo(idCargo);
 alter table empleado add foreign key (idDireccion) references direcciones(idDireccion);
 
+-- Insercciones de la tabla empleado
+
+insert into empleado(idEmpleado,nombreEmpleado, apellidoEmpleado, DUIEmpleado, correoEmpleado, fechaNacimientoEmpleado, telefonoEmpleado, idCargo, idDireccion)
+values  (1,'Ronal Eduardo','Cortez Mendez','05665126-2','ronmend@gmail.com','1998-10-13','7245-1266','1','3'),
+(2,'Geofre Steve','Tobar nuñez','06235698-0','tobar9@gmail.com','2002-05-23','7171-5621','5','2'),
+(3,'Ismael Enrrique','Garcia Hernandez','02369645-1','Garcia@gmail.com','2001-01-25','7698-2354','4','1'),
+(4,'Marcella Rocio','Gonzalez Hernandez','06451289-0','marce2525@gmail.com','2000-04-28','7425-0012','2','1'),
+(5,'Gerardo Alexander','Garcia Hernandez','0623633-4','gerarA@gmail.com','1998-09-15','7273-5614','3','5');
+
+select * from empleado;
+
+
 create table distribuidor (
 	idDistribuidor int primary key auto_increment,
 	distribuidor varchar(100) not null,
@@ -59,18 +86,20 @@ create table distribuidor (
 	descripcionDistribuidor longtext
 );
 alter table distribuidor add foreign key (idDireccion) references direcciones(idDireccion);
-
+select * from distribuidor;
 create table categoria(
   idCategoria int primary key auto_increment,
   categoria varchar(50) not null,
   descripcionCategoria longtext
 );
 
+    
 create table marca(
   idMarca int primary key auto_increment,
   marca   varchar(50) not null,
   descripcionMarca  longtext
 );
+
 
 create table unidadMEdida(
   idUnidadMedida int primary key auto_increment,
@@ -106,6 +135,7 @@ alter table producto add foreign key (idUnidadMedida) references unidadMEdida(id
 alter table producto add foreign key (idDistribuidor) references distribuidor(idDistribuidor);
 alter table producto add foreign key (idBodega) references bodega(idBodega);
 
+
 create table cliente (
 	idCliente int primary key auto_increment,
 	nombreCliente    varchar(150),
@@ -117,6 +147,7 @@ create table cliente (
 	idDireccion int
 );
 alter table cliente add foreign key (idDireccion) references direcciones(idDireccion);
+
 
 create table formaPago (
 	idFormaPago int primary key auto_increment,
@@ -157,6 +188,8 @@ create table facturaCompra(
 alter table facturaCompra add foreign key (idDetallePedido) references detallePedido(idDetallePedido);
 alter table facturaCompra add foreign key (idFormaPago) references formaPago(idFormaPago);
 
+
+
 create table venta(
 	idVenta int primary key auto_increment,
 	fechaVenta date not null,
@@ -166,6 +199,8 @@ create table venta(
 );
 alter table venta add foreign key (idEmpleado) references empleado(idEmpleado);
 alter table venta add foreign key (idCliente) references cliente(idCliente);
+
+
 
 create table detalleVenta(
 	idDetalleVenta int primary key auto_increment,
@@ -185,6 +220,7 @@ create table facturaVenta (
 	idDetalleVenta int,
 	idFormaPago int
 );
+
 alter table facturaVenta add foreign key (idDetalleVenta) references detalleVenta(idDetalleVenta);
 alter table facturaVenta add foreign key (idFormaPago) references formaPago(idFormaPago);
 
@@ -197,6 +233,7 @@ create table roles(
 idRol int primary key auto_increment,
 rol varchar(50) not null
 );
+select * from roles;
 
 create table opciones(
  idOpcion int primary key auto_increment,
@@ -210,7 +247,7 @@ idOpcion int not null
 );
 alter table asignacionRolesOpciones add foreign key (idRol) references roles (idRol);
 alter table asignacionRolesOpciones add foreign key (idOpcion) references opciones (idOpcion);
-
+select * from asignacionRolesOpciones;
 create table usuarios(
 idUsuario int primary key  auto_increment,
 usuario varchar(50) not null,
@@ -222,8 +259,9 @@ alter table usuarios add foreign key (idRol) references roles (idRol);
 alter table usuarios add foreign key (idEmpleado) references empleado(idEmpleado);
 
 
-    
-    
+-- inner join
+-- v1
+select * from opciones d join roles p using (rol);
     
     
 
