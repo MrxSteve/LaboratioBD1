@@ -537,6 +537,10 @@ insert into roles (rol) values
  ('Cajero'), -- 3
  ('RRHH');  -- 4
 
+
+insert into roles (rol) values
+  ('Bodeguero');
+
 -- nuevas inserciones
 
 insert into opciones (opcion) values
@@ -569,6 +573,24 @@ insert into opciones (opcion) values
     select * from opciones;
     insert into asignacionRolesOpciones(idRol, idOpcion)
     values
+    -- Bodeguero
+    ('5', '3'),
+    ('5', '5'),
+    ('5', '7'),
+    ('5', '10'),
+    ('5', '13'),
+    ('5', '15'),
+    ('5', '16'),
+    ('5', '19'),
+    ('5', '20'),
+    ('5', '22'),
+    ('5', '24');
+
+	select * from roles;
+    select * from opciones;
+    select * from asignacionRolesOpciones;
+    insert into asignacionRolesOpciones(idRol, idOpcion)
+    values
     -- SysAdmin
     ('1', '1'),
     ('1', '2'),
@@ -595,6 +617,51 @@ insert into opciones (opcion) values
     ('1', '23'),
     ('1', '24'),
     ('1', '25');
+    
+      insert into asignacionRolesOpciones(idRol, idOpcion)
+    values 
+    -- Gerente
+    ('2', '1'),
+    ('2', '2'),
+    ('2', '3'),
+    ('2', '4'),
+    ('2', '5'),
+    ('2', '6'),
+    ('2', '7'),
+    ('2', '8'),
+    ('2', '9'),
+    ('2', '10'),
+    ('2', '11'),
+    ('2', '12'),
+    ('2', '13'),
+    ('2', '14'),
+    ('2', '15'),
+    ('2', '16'),
+    ('2', '17'),
+    ('2', '18'),
+    ('2', '19'),
+    ('2', '20'),
+    ('2', '21'),
+    ('2', '22'),
+    ('2', '23'),
+    ('2', '24'),
+    ('2', '25'),
+    -- Cajero
+    ('3','24'),
+    ('3','8'),
+    ('3','14'),
+    ('3','13'),
+    ('3','15'),
+    ('3','19'),
+    ('3','7'),
+    ('3','8'),
+    ('3','16'),
+    ('3','3'),
+    ('3','20'),
+    ('3','6'),
+    ('3','17'), 
+    ('3','11');
+    
     
 
 insert into RRHH (Empleados,Cargo,Direcciones,Departamentos,Municipios,Distritos)
@@ -768,7 +835,7 @@ select * from bodega;
 INSERT INTO productos(producto, descripcionProducto, precioVenta, stock, fechaCaducidad, idCategoria, idMarca, idUnidadMedida, idDistribuidor, idBodega)
 VALUES ('Yougurt', 'Bebida a base de leche', 2.50, 10, '2024-06-23', 3, 1, 4, 2),
        ('Queso', 'Queso de loroco', 5.00, 20, '2024-05-09', 1, 1, 3, 2);
--- error
+
 
 select *from producto;
 
@@ -776,4 +843,5 @@ INSERT INTO cliente (nombreCliente, apellidoCliente, DUICliente, correoCliente, 
 VALUES ('Juan', 'Perez', '07123456-7', 'juan.perez@email.com', '1985-01-01', '4567 8901', 1);
 
 select * from cliente;
+
 
